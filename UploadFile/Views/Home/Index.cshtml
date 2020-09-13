@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div>
+        @model IEnumerable<UploadFile.Models.FileModel>
+        @{
+            ViewData["Title"] = "Добавление файла";
+        }
+        <h3>Выберите файл для загрузки</h3>
+        @*<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+
+
+            <input type="text" name="altitude" class="form-control" />
+            <input type="file" name="uploadedFile" /><br>
+            <input type="submit" value="Загрузить" />
+        </form>
+
+        <h3>Все файлы</h3>
+        @foreach (var f in Model)
+        {
+            <p><img src="@Url.Content(f.Path)"></p>
+        }*@
+    <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+        
+        <label class="form-check-label" for="exampleCheck1">Ввести ID</label>
+        <input type="text" name="personid" class="form-control" />
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Паспорт</label>
+            <input type="file" class="form-control-file" name="passFile">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Регистрация</label>
+            <input type="file" class="form-control-file" name="pass2File">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Загрузить</button>
+    </form>
+    </div>
